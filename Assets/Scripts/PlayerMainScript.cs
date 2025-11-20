@@ -15,7 +15,7 @@ public class PlayerMainScript : MonoBehaviour
     public float currentSpeed = 0f;
 
     public Camera cmr;
-    private Vector3 cmrOffset = new Vector3(0.75f, 1.5f, -2.85f);
+    public Vector3 cmrOffset = new Vector3(0.75f, 1.5f, -2.85f);
     public float minCmrX;
     public float maxCmrX;
 
