@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ground
+  m_Name: Mountain
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -26,9 +26,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 879f7408be26a4044bcc000bbda14231, type: 3}
-        m_Scale: {x: 16.92, y: -10.9}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 61468e1af470c6e498bf8a953ec2c5f7, type: 3}
+        m_Scale: {x: 3.13, y: 2.93}
+        m_Offset: {x: 0, y: 0.36}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -50,9 +50,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 879f7408be26a4044bcc000bbda14231, type: 3}
-        m_Scale: {x: 16.92, y: -10.9}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 61468e1af470c6e498bf8a953ec2c5f7, type: 3}
+        m_Scale: {x: 3.13, y: 2.93}
+        m_Offset: {x: 0, y: 0.36}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -121,7 +121,7 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &7324815097046989983
+--- !u!114 &810799753362830935
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

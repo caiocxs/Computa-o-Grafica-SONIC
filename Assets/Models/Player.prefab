@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4938912866215062564}
   - component: {fileID: 3750474612839413249}
   - component: {fileID: 948857209407726295}
-  - component: {fileID: 1975987026744785193}
   - component: {fileID: 2035041386309477457}
+  - component: {fileID: 1975987026744785193}
+  - component: {fileID: 3453431751992981128}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -117,41 +118,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &1975987026744785193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8740158472413093946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f70588924151c346a4702a24a983a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMainScript
-  speed: 2
-  minSpeed: 0
-  maxSpeed: 9
-  jumpSpeed: 0
-  currentSpeed: 0
-  cmr: {fileID: 0}
-  minCmrX: -0.6
-  maxCmrX: 0
-  spritesIdle:
-  - {fileID: -1874812868, guid: a995a55f3a1a2a14baf2c92fa0236368, type: 3}
-  - {fileID: 1548971662, guid: a995a55f3a1a2a14baf2c92fa0236368, type: 3}
-  - {fileID: -1156931564, guid: a995a55f3a1a2a14baf2c92fa0236368, type: 3}
-  spritesWalking:
-  - {fileID: -806153787, guid: 9084c236bec9f5b4b9d912a286a782e9, type: 3}
-  - {fileID: 796750068, guid: 9084c236bec9f5b4b9d912a286a782e9, type: 3}
-  - {fileID: -484598385, guid: 9084c236bec9f5b4b9d912a286a782e9, type: 3}
-  spritesRunning:
-  - {fileID: -771390319, guid: 62dd62cc6170a1544886f32ce60ec1fb, type: 3}
-  - {fileID: 516337837, guid: 62dd62cc6170a1544886f32ce60ec1fb, type: 3}
-  - {fileID: -1636647881, guid: 62dd62cc6170a1544886f32ce60ec1fb, type: 3}
-  currentSprite: 0
-  offset: 0.25
-  spriteCounter: 0
 --- !u!65 &2035041386309477457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -173,3 +139,54 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16019982, y: 0.38183227, z: 0.13729951}
   m_Center: {x: 0.02437179, y: -0.009083771, z: 0.031350143}
+--- !u!114 &1975987026744785193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740158472413093946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f70588924151c346a4702a24a983a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMainScript
+  speed: 2
+  minSpeed: 0
+  maxSpeed: 9
+  jumpSpeed: 0
+  cmr: {fileID: 0}
+  cmrOffset: {x: 0.75, y: 1.5, z: -2.85}
+  minCmrX: -0.6
+  maxCmrX: 0
+--- !u!114 &3453431751992981128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740158472413093946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556af71c3859fdc4495fecd148af79bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1975987026744785193}
+  spritesIdle:
+  - {fileID: -1874812868, guid: a995a55f3a1a2a14baf2c92fa0236368, type: 3}
+  - {fileID: 1548971662, guid: a995a55f3a1a2a14baf2c92fa0236368, type: 3}
+  - {fileID: -1156931564, guid: a995a55f3a1a2a14baf2c92fa0236368, type: 3}
+  spritesWalking:
+  - {fileID: -806153787, guid: 9084c236bec9f5b4b9d912a286a782e9, type: 3}
+  - {fileID: 796750068, guid: 9084c236bec9f5b4b9d912a286a782e9, type: 3}
+  - {fileID: -484598385, guid: 9084c236bec9f5b4b9d912a286a782e9, type: 3}
+  spritesRunning:
+  - {fileID: -771390319, guid: 62dd62cc6170a1544886f32ce60ec1fb, type: 3}
+  - {fileID: 516337837, guid: 62dd62cc6170a1544886f32ce60ec1fb, type: 3}
+  - {fileID: -1636647881, guid: 62dd62cc6170a1544886f32ce60ec1fb, type: 3}
+  currentSprite: 0
+  offset: 0.25
+  minOffset: 0.15
+  spriteCounter: 0
+  maxSpeed: 9
+  currentSpeed: 0
