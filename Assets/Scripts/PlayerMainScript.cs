@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 
 public class PlayerMainScript : MonoBehaviour
 {
-    private Camera cmr;
+    public Camera cmr;
     
     public float speed = 0f;
     public float minSpeed = 0.0f;
@@ -63,6 +63,9 @@ public class PlayerMainScript : MonoBehaviour
 
     private void Jump()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
 
+        }
     }
 }

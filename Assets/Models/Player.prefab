@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2035041386309477457}
   - component: {fileID: 1975987026744785193}
   - component: {fileID: 3453431751992981128}
+  - component: {fileID: 4522528859752667806}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,14 +152,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f70588924151c346a4702a24a983a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMainScript
+  cmr: {fileID: 0}
   speed: 2
   minSpeed: 0
   maxSpeed: 9
   jumpSpeed: 0
-  cmr: {fileID: 0}
   cmrOffset: {x: 0.75, y: 1.5, z: -2.85}
   minCmrX: -0.6
   maxCmrX: 0
+  canJump: 0
 --- !u!114 &3453431751992981128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,3 +192,25 @@ MonoBehaviour:
   spriteCounter: 0
   maxSpeed: 9
   currentSpeed: 0
+--- !u!95 &4522528859752667806
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740158472413093946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6be5fca42dce74045b1f663562a13ef5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
