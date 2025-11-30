@@ -281,7 +281,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895957512995956037}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2bf63aa71ba601a418235b4de06d2795, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 8902402994979840521}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -744,7 +744,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8427528695661159845}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2bf63aa71ba601a418235b4de06d2795, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
