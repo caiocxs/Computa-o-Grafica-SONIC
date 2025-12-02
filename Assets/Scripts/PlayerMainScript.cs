@@ -23,10 +23,17 @@ public class PlayerMainScript : MonoBehaviour
     private bool isMoving;
     private bool isRunning;
     private bool isJumping;
-    public bool canJump;
+    private bool canMove = true;
 
+    [Header("Configurações de Pulo")]
+    public float initialForce = 5f;
+    public float extraForce = 10f;
+    public float maxJumpTime = 0.35f;
+
+    public bool canJump;
     public float maxJumping;
-    
+    public float jumpTimeCounter;
+
     [Header("Referências")]
     public Camera cmr;
     public Vector3 cmrOffset = new Vector3(0.75f, 1.5f, -2.85f);
@@ -53,11 +60,14 @@ public class PlayerMainScript : MonoBehaviour
     {
         cmr.transform.position = transform.position + cmrOffset;
 
-        HandleHolding();
-        if (!isHoldingSpeed)
-            HandleWalkingRunning();
+        if (canMove)
+        {
+            HandleHolding();
+            if (!isHoldingSpeed)
+                HandleWalkingRunning();
 
-        HandleJumping();
+            HandleJumping();
+        }
     }
 
     private void HandleWalkingRunning()
@@ -116,7 +126,7 @@ public class PlayerMainScript : MonoBehaviour
             accumulatedSpeed += speedAccumulationRate * Time.deltaTime;
             accumulatedForce += forceAccumulationRate * Time.deltaTime;
         }
-        
+
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             ApplyBoost();
@@ -137,7 +147,6 @@ public class PlayerMainScript : MonoBehaviour
         boostDirection.x *= directionX;
         speed = finalSpeed;
 
-        //rb.linearVelocity += Vector3.right * directionX * accumulatedForce * boostForceMultiplier;
         rb.AddForce(boostDirection * accumulatedForce * boostForceMultiplier, ForceMode.Impulse);
 
         accumulatedSpeed = 0f;
@@ -146,19 +155,43 @@ public class PlayerMainScript : MonoBehaviour
 
     private void HandleJumping()
     {
-        isJumping = Input.GetKeyDown(KeyCode.Space);
-        if(isJumping)
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
-            accumulatedForce += forceAccumulationRate * Time.deltaTime;
-            rb.AddForce(Vector3.up * 20f);
+            isJumping = true;
+            jumpTimeCounter = maxJumpTime;
+
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+            rb.AddForce(Vector3.up * initialForce, ForceMode.Impulse);
+            canJump = false;
+            an.SetBool("isJumping", isJumping);
         }
 
-        isJumping = Input.GetKeyUp(KeyCode.Space) ;
-        if (isJumping)
+        if (Input.GetKey(KeyCode.Space) && isJumping)
         {
-            canJump = false;
-            accumulatedForce = 0f;
+            if (jumpTimeCounter > 0)
+            {
+                rb.AddForce(Vector3.up * extraForce * Time.deltaTime, ForceMode.Impulse);
+
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
         }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
+        }
+
+        an.SetBool("isJumping", isJumping);
+        an.SetBool("canJump", canJump);
+    }
+
+    public void SetCanMove(bool newValue)
+    {
+        canMove = newValue;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -166,7 +199,8 @@ public class PlayerMainScript : MonoBehaviour
         if (collision.gameObject.tag.Equals("ground"))
         {
             canJump = true;
-            Debug.Log("HEY");
+            an.SetBool("canJump", canJump);
         }
     }
+
 }
