@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2083316640785932865}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyCaterPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2585491952410883737}
   - component: {fileID: 4704307447742325737}
   - component: {fileID: 7669025045088931072}
-  - component: {fileID: 1976853541195589169}
+  - component: {fileID: 3609480232344891964}
   m_Layer: 0
   m_Name: Cube
   m_TagString: enemy
@@ -160,7 +160,7 @@ MonoBehaviour:
   stunnedTime: 1
   invincibleTime: 2
   yAxisNerf: 1
---- !u!114 &1976853541195589169
+--- !u!114 &3609480232344891964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,5 +172,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85272ab584a11647abaf27758507567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  vision: 10

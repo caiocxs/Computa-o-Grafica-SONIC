@@ -76,6 +76,17 @@ public class PlayerMainScript : MonoBehaviour
         var ver = Input.GetAxis("Vertical") * speed;   // W/S
         var movement = new Vector3(hor, 0, ver);
 
+        Vector3 camForward = cmr.transform.forward;
+        Vector3 camRight = cmr.transform.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward = camForward.normalized;
+        camRight = camRight.normalized;
+
+        Vector3 direcaoMovimento = (camForward * ver) + (camRight * hor);
+
         Vector3 currentVelocity = rb.linearVelocity;
         rb.linearVelocity = new Vector3(movement.x, currentVelocity.y, movement.z);
 
